@@ -25,3 +25,9 @@ jobs:
         with:
           push: true
           tags: shimmerjs/fralex.life:latest
+      - name: glotify
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_TO }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          args: ${{ github.actor }} pushed ${{ github.sha }} which published shimmerjs/fralex.life@${{ steps.docker_build.outputs.digest }}
