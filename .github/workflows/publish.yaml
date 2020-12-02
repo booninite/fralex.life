@@ -24,10 +24,15 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: shimmerjs/fralex.life:latest
+          tags: shimmerjs/fralex.life:bigday-${{ github.sha }}
       - name: glotify
         uses: appleboy/telegram-action@master
         with:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
-          args: ${{ github.actor }} pushed ${{ github.sha }} which published shimmerjs/fralex.life@${{ steps.docker_build.outputs.digest }}
+          args: |
+            ${{ github.actor }} pushed ${{ github.sha },
+            which published 
+            shimmerjs/fralex.life@${{ steps.docker_build.outputs.digest }}
+
+            thank you for doing your part, 10 fralexcoins have been credited to your wallet
