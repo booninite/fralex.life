@@ -1,3 +1,3 @@
 # fralex.life
 
-Link: fralex.life
+Link: www.fralex.life
