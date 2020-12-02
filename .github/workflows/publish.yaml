@@ -31,7 +31,7 @@ jobs:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           args: |
-            ${{ github.actor }} pushed ${{ github.sha },
+            ${{ github.actor }} pushed ${{ github.sha }},
             which published 
             shimmerjs/fralex.life@${{ steps.docker_build.outputs.digest }}
 
