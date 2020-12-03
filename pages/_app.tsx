@@ -2,8 +2,10 @@ import '../styles/globals.css'
 import axios from 'axios';
 
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+function FralexLife({ pix }) {
+  return (
+      pix.map((pic) => <img src={pic}></img>)
+  )
 }
 
 export async function getStaticProps() {
@@ -32,4 +34,4 @@ export async function getStaticProps() {
   }
 }
 
-export default MyApp
+export default FralexLife
