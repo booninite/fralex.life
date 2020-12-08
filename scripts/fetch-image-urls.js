@@ -19,9 +19,7 @@ async function getAlbum() {
 
 (async function run() {
   const urls = (await getAlbum()).map(url => ({
-    original: `${url}`,
-    thumbnail: `${url}=w250-h100`,
-    originalClass: 'fralex'
+    src: url,
   }))
   fs.writeFileSync('assets/pix.json', JSON.stringify(urls, null, 2))
 })()

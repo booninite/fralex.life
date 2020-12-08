@@ -1,12 +1,14 @@
 import '../styles/globals.css'
 import '../styles/style.css'
-import pix from '../assets/pix.json'
-import ImageGallery from 'react-image-gallery';
-import 'react-image-gallery/styles/css/image-gallery.css'
-import { shuffle } from 'lodash';
 import Countdown from 'react-countdown';
 import React from 'react';
 import Head from 'next/head'
+import Dynamic from 'next/dynamic'
+
+const ImageGalleryNoSSR = Dynamic(
+  () => import('../components/gallery'),
+  { ssr: false}
+)
 
 const renderer = ({ days, hours, minutes, seconds, completed }) => {
   if (completed) {
@@ -21,7 +23,6 @@ const renderer = ({ days, hours, minutes, seconds, completed }) => {
 const JustMarried = () => <p>~*~ just married ~*~</p>
 
 function FralexLife() {
-  const images = shuffle(pix)
   return (
     <div className="container">
       <Head>
@@ -45,14 +46,13 @@ function FralexLife() {
           </div>
         </section>
       </header>
-      
 
-      <ImageGallery 
-        items={images}
-        showThumbnails={false}
-        autoPlay={true}
-        slideDuration={500}
-      />
+
+
+      <main>      
+        <ImageGalleryNoSSR></ImageGalleryNoSSR>
+        <p></p>
+      </main>
 
     </div>
   )

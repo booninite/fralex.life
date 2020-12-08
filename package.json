@@ -14,7 +14,7 @@
     "react": "17.0.1",
     "react-countdown": "^2.3.1",
     "react-dom": "17.0.1",
-    "react-image-gallery": "^1.0.8"
+    "react-responsive-gallery": "^1.2.5"
   },
   "devDependencies": {
     "@types/lodash": "^4.14.165",
