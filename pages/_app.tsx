@@ -24,7 +24,7 @@ const JustMarried = () => <p>~*~ just married ~*~</p>
 
 function FralexLife() {
   return (
-    <div className="container">
+    <div>
       <Head>
         <title>Francesca + Alex | Alex + Francesca</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -32,6 +32,7 @@ function FralexLife() {
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400;1,600&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet"/>
       </Head>
 
+      <div className="container">
       <header>
         <section>
           <h1>Alex & Francesca</h1>
@@ -46,11 +47,12 @@ function FralexLife() {
           </div>
         </section>
       </header>
-
+      </div>
 
 
       <main>      
         <ImageGalleryNoSSR></ImageGalleryNoSSR>
+        
         <p></p>
       </main>
 
