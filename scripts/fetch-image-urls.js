@@ -18,6 +18,9 @@ async function getAlbum() {
 }
 
 (async function run() {
-  const urls = await getAlbum()
+  const urls = (await getAlbum()).map(url => ({
+    original: `${url}=w750-h750`,
+    thumbnail: `${url}=w250-h100`
+  }))
   fs.writeFileSync('assets/pix.json', JSON.stringify(urls, null, 2))
 })()
