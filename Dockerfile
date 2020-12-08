@@ -1,3 +1,5 @@
 FROM node:12
-RUN yarn global add serve
-ADD site site
+ADD . .
+RUN yarn install
+RUN yarn build
+CMD yarn start
