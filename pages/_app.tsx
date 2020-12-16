@@ -7,7 +7,7 @@ import Dynamic from 'next/dynamic'
 
 const ImageGalleryNoSSR = Dynamic(
   () => import('../components/gallery'),
-  { ssr: false}
+  { ssr: true}
 )
 
 const renderer = ({ days, hours, minutes, seconds, completed }) => {
@@ -51,10 +51,10 @@ function FralexLife() {
 
 
       <main>      
-        <ImageGalleryNoSSR></ImageGalleryNoSSR>
+        <ImageGalleryNoSSR />
         
-        <p></p>
-      </main>
+      {/* <p></p> */}
+      </main> 
 
     </div>
   )
