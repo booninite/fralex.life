@@ -1,20 +1,27 @@
-import pix from '../assets/pix.json'
-import { shuffle } from 'lodash';
+import pix from "../assets/pix.json";
+import { shuffle } from "lodash";
 
-function ImageGallery () {
-  const images = shuffle(pix)
-  return <div className="ml">
-    {images.map(i => {
-    return <div key={i.src} className="ml-pnl ">
-                <picture>
-                  <source srcSet={i.src + "?webp"} type="image/webp" />
-                  <source srcSet={i.src} type="image/jpeg" />
-                  <img className="ml-pnl__cntnt" key={i.src} src={i.src} />
-                </picture>
-              </div>
-    })}
+function ImageGallery() {
+  const images = shuffle(pix);
+  return (
+    <div className="ml">
+      {images.map(i => {
+        return (
+          <div key={i.src} className="ml-pnl">
+            <picture>
+              <source srcSet={i.src + "?webp"} type="image/webp" />
+              <source srcSet={i.src} type="image/jpeg" />
+              <img
+                className="ml-pnl__cntnt"
+                key={i.src}
+                src={i.src + "?trace"}
+              />
+            </picture>
+          </div>
+        );
+      })}
 
-  <style jsx>{`
+      <style jsx>{`
         /* MASONRY CSS */
         .ml {
           box-sizing: border-box;
@@ -54,7 +61,8 @@ function ImageGallery () {
           padding: 0;
         }
       `}</style>
-      </div>
+    </div>
+  );
 }
 
-export default ImageGallery
+export default ImageGallery;

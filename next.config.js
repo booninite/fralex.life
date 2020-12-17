@@ -1,4 +1,3 @@
-// next.config.js
 const withPlugins = require("next-compose-plugins");
 const optimizedImages = require("next-optimized-images");
 const withCSS = require("@zeit/next-css");
@@ -8,27 +7,7 @@ module.exports = withCSS({
   cssLoaderOptions: {
     url: false,
   },
-  // webpack: function (config) {
-  //   config.module.rules.push({
-  //     test: /\.(eot|woff|woff2|ttf|svg|png|jpg|gif)$/,
-  //     use: {
-  //       loader: 'url-loader',
-  //       options: {
-  //         limit: 100000,
-  //         name: '[name].[ext]'
-  //       }
-  //     }
-  //   })
-  //   return config
-  // }
 });
-
-// module.exports = withCSS({
-//   cssModules: true,
-//   cssLoaderOptions: {
-//     url: false
-//   }
-// });
 
 module.exports = withPlugins([
   [
@@ -48,6 +27,9 @@ module.exports = withPlugins([
       webp: {
         preset: "default",
         quality: 75,
+      },
+      optipng: {
+        optimizationLevel: 3,
       },
     },
   ],

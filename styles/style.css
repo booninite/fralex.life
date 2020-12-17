@@ -36,7 +36,7 @@ main {
   background-image: url('../public/images/trees.png');
   background-position: bottom;
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: contain;
 }
 
 header {
