@@ -9,12 +9,13 @@ function ImageGallery() {
         return (
           <div key={i.src} className="ml-pnl">
             <picture>
-              <source srcSet={i.src + "?webp"} type="image/webp" />
+              <source srcSet={i.src + "?format=webp"} type="image/webp" />
               <source srcSet={i.src} type="image/jpeg" />
               <img
                 className="ml-pnl__cntnt"
                 key={i.src}
-                src={i.src + "?trace"}
+                src={i.src}
+                alt={i.alt}
               />
             </picture>
           </div>

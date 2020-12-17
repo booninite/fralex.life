@@ -1,29 +1,14 @@
 import "../styles/globals.css";
 import "../styles/style.css";
-import Countdown from "react-countdown";
 import React from "react";
 import Head from "next/head";
 import Dynamic from "next/dynamic";
-
-const ImageGalleryNoSSR = Dynamic(() => import("../components/gallery"), {
-  ssr: true,
+const DaysTill = Dynamic(() => import("../components/daystill"), {
+  ssr: false,
 });
-
-const renderer = ({ days, hours, minutes, seconds, completed }) => {
-  if (completed) {
-    // Render a completed state
-    return <JustMarried />;
-  } else {
-    // Render a countdown
-    return (
-      <p>
-        {days} days to go!
-      </p>
-    );
-  }
-};
-
-const JustMarried = () => <p>~*~ just married ~*~</p>;
+const ImageGallery = Dynamic(() => import("../components/gallery"), {
+  ssr: false,
+});
 
 function FralexLife() {
   return (
@@ -43,11 +28,7 @@ function FralexLife() {
           <section>
             <h1>Alex & Francesca</h1>
             <p>December 24, 2020 &#8226; Durham, NC</p>
-            <Countdown
-              className="countdown"
-              renderer={renderer}
-              date={new Date("Dec 24, 2020 14:00:00").getTime()}
-            />
+            <DaysTill />
           </section>
           <section className="navbar">
             <div className="navbarItems">
@@ -57,6 +38,7 @@ function FralexLife() {
               </a>
               <a
                 target="_blank"
+                rel="noreferrer"
                 href="https://www.amazon.com/wedding/registry/1J6VW456EVRB7?ref=wr_search_page_result_"
               >
                 Registry
@@ -67,7 +49,7 @@ function FralexLife() {
       </div>
 
       <main>
-        <ImageGalleryNoSSR />
+        <ImageGallery />
 
         {/* <p></p> */}
       </main>
