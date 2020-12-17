@@ -6,6 +6,7 @@ function ImageGallery() {
   return (
     <div className="ml">
       {images.map(i => {
+        console.log(i);
         return (
           <div key={i.src} className="ml-pnl">
             <picture>
@@ -15,7 +16,7 @@ function ImageGallery() {
                 className="ml-pnl__cntnt"
                 key={i.src}
                 src={i.src}
-                alt={i.alt}
+                // alt={i.alt}
               />
             </picture>
           </div>
