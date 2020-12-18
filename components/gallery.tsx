@@ -17,6 +17,8 @@ function ImageGallery() {
                 src={i.src}
                 // Lets not talk about this
                 alt={iteration + ""}
+                width={i.width}
+                height={i.height}
               />
             </picture>
           </div>
