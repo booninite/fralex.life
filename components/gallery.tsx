@@ -1,5 +1,8 @@
 import pix from "../assets/pix.json";
 import { shuffle } from "lodash";
+import "lazysizes";
+// import a plugin
+import "lazysizes/plugins/parent-fit/ls.parent-fit";
 
 function ImageGallery() {
   const images = shuffle(pix);
@@ -12,7 +15,8 @@ function ImageGallery() {
               <source srcSet={i.src + "?format=webp"} type="image/webp" />
               <source srcSet={i.src} type="image/jpeg" />
               <img
-                className="ml-pnl__cntnt"
+                // className="ml-pnl__cntnt"
+                className={`ml-pnl__cntnt lazyload`}
                 key={i.src}
                 src={i.src}
                 // Lets not talk about this

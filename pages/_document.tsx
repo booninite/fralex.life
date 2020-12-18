@@ -4,7 +4,10 @@ class MyDocument extends Document {
   render() {
     return (
       <Html lang="en">
-        <Head />
+        <Head>
+          <link rel="preload" href="https://fonts.gstatic.com" />
+          <link rel="preload" href="https://lh3.googleusercontent.com" />
+        </Head>
         <body>
           <Main />
           <NextScript />
