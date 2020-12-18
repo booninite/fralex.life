@@ -25,6 +25,11 @@ h1 {
   font-family: 'Playfair Display', serif;
 }
 
+img {
+  width: 100%; /* or max-width: 100%; */
+  height: auto;
+}
+
 .container {
   background: rgb(254,252,251);
   background: linear-gradient(180deg, rgba(254,252,251,1) 15%, rgba(43,61,59,1) 71%, rgba(134,151,142,1) 77%, rgba(254,252,251,1) 100%);
@@ -40,7 +45,7 @@ main {
   background-image: url('../public/images/trees.png');
   background-position: bottom;
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: contain;
 }
 
 header {
@@ -93,6 +98,7 @@ footer,
 
   .container {
       background-position: center;
+      background-size: cover;
   }
 }
 
@@ -107,6 +113,7 @@ footer,
 
   .container {
       background-position: center;
+      background-size: cover;
   }
 
   .fralex {
