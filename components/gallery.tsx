@@ -5,8 +5,7 @@ function ImageGallery() {
   const images = shuffle(pix);
   return (
     <div className="ml">
-      {images.map(i => {
-        console.log(i);
+      {images.map((i, iteration) => {
         return (
           <div key={i.src} className="ml-pnl">
             <picture>
@@ -16,7 +15,8 @@ function ImageGallery() {
                 className="ml-pnl__cntnt"
                 key={i.src}
                 src={i.src}
-                // alt={i.alt}
+                // Lets not talk about this
+                alt={iteration + ""}
               />
             </picture>
           </div>
