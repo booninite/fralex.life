@@ -5,8 +5,12 @@ class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
-          <link rel="preload" href="https://fonts.gstatic.com" />
-          <link rel="preload" href="https://lh3.googleusercontent.com" />
+          {/* <link rel="preload" href="https://fonts.gstatic.com" as="style" />
+          <link
+            rel="preload"
+            href="https://lh3.googleusercontent.com"
+            as="style"
+          /> */}
         </Head>
         <body>
           <Main />

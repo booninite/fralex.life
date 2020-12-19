@@ -1,29 +1,46 @@
 import pix from "../assets/pix.json";
 import { shuffle } from "lodash";
-import "lazysizes";
+import Image from "next/image";
+// import "lazysizes";
 // import a plugin
-import "lazysizes/plugins/parent-fit/ls.parent-fit";
+// import "lazysizes/plugins/parent-fit/ls.parent-fit";
 
 function ImageGallery() {
   const images = shuffle(pix);
   return (
     <div className="ml">
+      {/* <Image
+        src="https://via.placeholder.com/150"
+        alt="Picture of the author"
+        width={500}
+        height={500}
+      /> */}
       {images.map((i, iteration) => {
         return (
           <div key={i.src} className="ml-pnl">
             <picture>
               <source srcSet={i.src + "?format=webp"} type="image/webp" />
               <source srcSet={i.src} type="image/jpeg" />
-              <img
-                // className="ml-pnl__cntnt"
-                className={`ml-pnl__cntnt lazyload`}
+              <Image
                 key={i.src}
                 src={i.src}
+                alt={iteration + ""}
+                width={i.width}
+                height={i.height}
+                className="ml-pnl__cntnt"
+                layout="responsive"
+              />
+              {/* <img
+                className="ml-pnl__cntnt"
+                // className={`ml-pnl__cntnt lazyload`}
+                key={i.src}
+                src={i.src}
+                // data-src={i.src}
                 // Lets not talk about this
                 alt={iteration + ""}
                 width={i.width}
                 height={i.height}
-              />
+              /> */}
             </picture>
           </div>
         );
