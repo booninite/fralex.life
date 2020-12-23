@@ -27,7 +27,7 @@ function DaysTill() {
       <Countdown
         className="countdown"
         renderer={renderer}
-        date={new Date("Dec 24, 2020 14:00:00 ET").getTime()}
+        date={new Date("Dec 24, 2020 14:00:00 EST").getTime()}
       />
     </div>
   );
