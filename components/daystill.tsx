@@ -10,11 +10,11 @@ const counter = (unit: number, sUnit: string) =>
 const renderer = ({ days, hours, minutes, seconds, completed }) => {
   if (completed) {
     return <JustMarried />;
-  } else if (days > 1) {
+  } else if (days >= 1) {
     return counter(days, "days");
-  } else if (hours > 1) {
+  } else if (hours >= 1) {
     return counter(hours, "hours");
-  } else if (minutes > 1) {
+  } else if (minutes >= 1) {
     return counter(minutes, "minutes");
   } else {
     return counter(seconds, "seconds");
