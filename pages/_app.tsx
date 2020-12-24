@@ -29,7 +29,7 @@ function FralexLife() {
           <section className="navbar">
             <div className="navbarItems">
               <a href="#">Home</a>
-              <a href="#" aria-disabled="true">
+              <a href="https://youtu.be/AXYLGwVdL38">
                 Livestream
               </a>
               <a
